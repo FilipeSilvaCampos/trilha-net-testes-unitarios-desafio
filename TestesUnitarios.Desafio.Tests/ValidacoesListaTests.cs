@@ -53,9 +53,10 @@ public class ValidacoesListaTests
         // Arrange
         var lista = new List<int> { 5, 7, 8, 9 };
         var resultadoEsperado = new List<int> { 10, 14, 16, 18 };
-        
-        // Act
-        Assert.All(lista, x => Assert.True(resultadoEsperado.Contains(x * 2)));
+        //Act
+        List<int> result = _validacoes.MultiplicarNumerosLista(lista, 2);
+		// Act
+		Assert.All(result, x => Assert.True(resultadoEsperado.Contains(x)));
     }
 
     [Fact]
